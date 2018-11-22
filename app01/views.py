@@ -4,11 +4,11 @@ import time
 # Create your views here.
 def alipay():
     obj = AliPay(
-        appid="2016092000556767",
+        appid="",######添写自己的appid
         app_notify_url="http://127.0.0.1:8000/update_order/",  #这是一个公网地址，这里省略暂不实现。 如果支付成功，支付宝会向这个地址发送POST请求（校验是否支付已经完成）
         return_url="http://127.0.0.1:8000/payresult/",  # 如果支付成功，重定向回到你的网站的地址。
-        alipay_public_key_path="keys/alipay_public.txt",  # 支付宝公钥
-        app_private_key_path="keys/app_private.txt",  # 应用私钥
+        alipay_public_key_path="keys/alipay_public.txt",  # 支付宝公钥 使用自己的支付宝公钥，这里的公钥现在为空
+        app_private_key_path="keys/app_private.txt",  # 应用私钥 使用自己的支付宝公钥，这里的公钥现在为空
         debug=True,  # 默认False,
     )
     return obj
